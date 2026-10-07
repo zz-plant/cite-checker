@@ -1,0 +1,42 @@
+{
+  "name": "cite-check",
+  "version": "0.1.0",
+  "description": "Checks that the sources behind a site's claims still answer, with a three-state verdict (PASS / FAIL / UNKNOWN), identifier resolvers (DOI via Crossref, SEC archive paths), Wayback captures written back into frontmatter, and a committed snapshot the site can render.",
+  "license": "MIT",
+  "type": "module",
+  "keywords": [
+    "citations",
+    "link-checker",
+    "provenance",
+    "wayback",
+    "crossref",
+    "static-site"
+  ],
+  "bin": {
+    "cite-check": "./src/cli.ts"
+  },
+  "exports": {
+    ".": "./src/index.ts",
+    "./snapshot": "./src/snapshot.ts"
+  },
+  "files": [
+    "src",
+    "skills",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "bun test tests",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "dependencies": {
+    "tinyglobby": "^0.2.14"
+  },
+  "devDependencies": {
+    "@types/bun": "^1.3.14",
+    "typescript": "^5.9.3"
+  },
+  "engines": {
+    "bun": ">=1.2"
+  }
+}

@@ -1,0 +1,52 @@
+export {
+  collectSources,
+  evidenceRegions,
+  maskCode,
+  objectSpans,
+  sourcesIn,
+  urlsIn,
+  type ExtractOptions,
+  type SourceRef,
+} from "./extract.ts";
+export {
+  checkSource,
+  checkSources,
+  crossrefDoi,
+  DEFAULT_HOSTS,
+  DEFAULT_REFUSAL_STATUSES,
+  DEFAULT_RESOLVERS,
+  getErrorMessage,
+  headersFor,
+  hostRule,
+  secArchiveStructure,
+  secStructuralProblem,
+  type CheckOptions,
+  type HostRule,
+  type Resolver,
+  type ResolverContext,
+  type RunOptions,
+  type SourceResult,
+  type Verdict,
+} from "./check.ts";
+export {
+  readSnapshot,
+  SNAPSHOT_SCHEMA,
+  toSnapshot,
+  type SourceCheck,
+  type SourceCheckCounts,
+  type SourceCheckSnapshot,
+} from "./snapshot.ts";
+export {
+  archiveEntriesIn,
+  archiveSources,
+  insertCapture,
+  latestCapture,
+  needsCapture,
+  saveCapture,
+  type ArchiveEntry,
+  type ArchiveOptions,
+  type ArchiveOutcome,
+  type ArchiveRunOptions,
+  type Capture,
+} from "./archive.ts";
+export { defineConfig, loadConfig, type CiteCheckConfig } from "./config.ts";
