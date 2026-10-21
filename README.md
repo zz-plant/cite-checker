@@ -1,4 +1,4 @@
-# cite-check
+# cite-checker
 
 Checks that the sources behind a site's claims still answer, and publishes the result.
 
@@ -9,7 +9,7 @@ counting it as a pass (so a broken link on a bot-blocking host passes forever) o
 failure (so a quarter of the hosts a careful site cites fail on every run). And a check
 nobody can see is a check nobody trusts.
 
-`cite-check` does three things differently:
+`cite-checker` does three things differently:
 
 - **A third verdict.** Every source is `PASS`, `FAIL` or `UNKNOWN`. A refusal is `UNKNOWN`
   and is never counted as a pass. Hosts you know refuse everything are labelled as such so
@@ -24,24 +24,24 @@ nobody can see is a check nobody trusts.
   command so a dead source still has somewhere to point.
 
 It only collects URLs that back claims. A nav item and a citation share the same
-`label:` + `href:` shape, so scoping by adjacent key cannot tell them apart; `cite-check`
+`label:` + `href:` shape, so scoping by adjacent key cannot tell them apart; `cite-checker`
 scopes by block instead: named frontmatter blocks in Markdown, and the brace-balanced
 record carrying a claim key in TypeScript or JavaScript data files.
 
 ## Install
 
 ```sh
-bun add -d cite-check
+bun add -d cite-checker
 ```
 
 It runs under [Bun](https://bun.sh). The library uses only standard APIs and `tinyglobby`.
 
 ## Configure
 
-`cite-check.config.ts` at the root of the project:
+`cite-checker.config.ts` at the root of the project:
 
 ```ts
-import { defineConfig } from "cite-check";
+import { defineConfig } from "cite-checker";
 
 export default defineConfig({
   // Files that carry claims. Markdown is read for frontmatter evidence blocks;
@@ -85,12 +85,12 @@ refuse everyone (`doi.org`, `web.archive.org`, wire services).
 ## Run
 
 ```sh
-cite-check check            # verdict per source; exit 1 on any FAIL
-cite-check check --json     # the results as JSON
-cite-check check --write    # also record the run in the snapshot
-cite-check archive          # list citations with no Wayback capture on file
-cite-check archive --write  # insert `archived: { href, captured }` after each href
-cite-check archive --save   # ask the Wayback Machine to capture sources it has never seen
+cite-checker check            # verdict per source; exit 1 on any FAIL
+cite-checker check --json     # the results as JSON
+cite-checker check --write    # also record the run in the snapshot
+cite-checker archive          # list citations with no Wayback capture on file
+cite-checker archive --write  # insert `archived: { href, captured }` after each href
+cite-checker archive --save   # ask the Wayback Machine to capture sources it has never seen
 ```
 
 Sources are checked one at a time with a short pause. That is deliberate: SEC and the
@@ -123,7 +123,7 @@ train everyone to ignore the check.
 Read it at build time with the `/snapshot` export:
 
 ```ts
-import { readSnapshot } from "cite-check/snapshot";
+import { readSnapshot } from "cite-checker/snapshot";
 import snapshot from "./src/data/generated/source-checks.json";
 
 const checks = readSnapshot(snapshot);
@@ -152,7 +152,7 @@ evidenceSources:
 ## As a library
 
 ```ts
-import { collectSources, checkSources, toSnapshot, type Resolver } from "cite-check";
+import { collectSources, checkSources, toSnapshot, type Resolver } from "cite-checker";
 
 const arxiv: Resolver = {
   name: "arxiv",

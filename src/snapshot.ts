@@ -73,7 +73,7 @@ export function readSnapshot(snapshot: SourceCheckSnapshot) {
 
 export const SNAPSHOT_SCHEMA = {
   $schema: "https://json-schema.org/draft/2020-12/schema",
-  title: "cite-check snapshot",
+  title: "cite-checker snapshot",
   type: "object",
   required: ["checkedAt", "sources"],
   properties: {

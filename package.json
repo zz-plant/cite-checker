@@ -1,16 +1,16 @@
 {
-  "name": "cite-check",
+  "name": "cite-checker",
   "version": "0.1.0",
   "description": "Checks that the sources behind a site's claims still answer, with a three-state verdict (PASS / FAIL / UNKNOWN), identifier resolvers (DOI via Crossref, SEC archive paths), Wayback captures written back into frontmatter, and a committed snapshot the site can render.",
   "author": "Kanav Jain (https://kanav.net)",
   "license": "MIT",
-  "homepage": "https://github.com/zz-plant/cite-check#readme",
+  "homepage": "https://github.com/zz-plant/cite-checker#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/zz-plant/cite-check.git"
+    "url": "git+https://github.com/zz-plant/cite-checker.git"
   },
   "bugs": {
-    "url": "https://github.com/zz-plant/cite-check/issues"
+    "url": "https://github.com/zz-plant/cite-checker/issues"
   },
   "type": "module",
   "keywords": [
@@ -23,7 +23,7 @@
     "bun"
   ],
   "bin": {
-    "cite-check": "./src/cli.ts"
+    "cite-checker": "./src/cli.ts"
   },
   "exports": {
     ".": "./src/index.ts",

@@ -28,14 +28,14 @@ export function defineConfig(config: CiteCheckConfig): CiteCheckConfig {
 }
 
 export const CONFIG_NAMES = [
-  "cite-check.config.ts",
-  "cite-check.config.mts",
-  "cite-check.config.js",
-  "cite-check.config.mjs",
-  "cite-check.config.json",
+  "cite-checker.config.ts",
+  "cite-checker.config.mts",
+  "cite-checker.config.js",
+  "cite-checker.config.mjs",
+  "cite-checker.config.json",
 ];
 
-/** The config at `path`, or the first `cite-check.config.*` found in `cwd`. */
+/** The config at `path`, or the first `cite-checker.config.*` found in `cwd`. */
 export async function loadConfig(
   cwd: string,
   path?: string
@@ -46,7 +46,7 @@ export async function loadConfig(
     throw new Error(
       path
         ? `No config at ${path}`
-        : `No cite-check config found in ${cwd} (looked for ${CONFIG_NAMES.join(", ")})`
+        : `No cite-checker config found in ${cwd} (looked for ${CONFIG_NAMES.join(", ")})`
     );
   }
   const loaded = (await import(pathToFileURL(file).href)) as {

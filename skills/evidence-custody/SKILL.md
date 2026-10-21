@@ -19,7 +19,7 @@ another.
 
 | Check          | Question                                       | How                         |
 | -------------- | ---------------------------------------------- | --------------------------- |
-| **Liveness**   | Does the URL resolve?                          | `cite-check check`          |
+| **Liveness**   | Does the URL resolve?                          | `cite-checker check`        |
 | **Support**    | Does the source _say what the claim says_?     | Read the source. Judgement. |
 | **Provenance** | Is this the author's work, or something cited? | Ownership, authorship, date |
 
@@ -37,7 +37,7 @@ that **a broken link on a bot-blocking host passes forever.** A malformed SEC ar
 can 404 for as long as it exists while the whole site reports clean, because sec.gov
 answers 403 to an undeclared client.
 
-`cite-check check` exists for this. It sends each host what it wants, resolves DOIs
+`cite-checker check` exists for this. It sends each host what it wants, resolves DOIs
 through Crossref rather than the blocked `doi.org` redirect, catches malformed SEC archive
 paths without a network call, and — the important part — reports a refusal as **UNKNOWN
 rather than PASS**. Unverifiable is not passing. Read those by hand before recording that
@@ -105,7 +105,7 @@ it is one grammar.
 
 Run this when touching claims, and periodically regardless.
 
-1. `cite-check check --write` — real liveness, per host, recorded in the snapshot the site
+1. `cite-checker check --write` — real liveness, per host, recorded in the snapshot the site
    reads. Each citation can print its result ("answered" with the run's date, "stopped
    answering by" on a dead one, "refuses automated checks" on a refusal). Anything FAIL is
    broken now, and is shown as broken until repointed. Anything UNKNOWN needs a human; it is

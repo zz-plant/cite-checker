@@ -1,7 +1,7 @@
 #!/usr/bin/env bun
 /**
- *   cite-check check [--json] [--write] [--config <file>]
- *   cite-check archive [--write] [--save] [--config <file>]
+ *   cite-checker check [--json] [--write] [--config <file>]
+ *   cite-checker archive [--write] [--save] [--config <file>]
  *
  * `check` exits 1 if any source is FAIL. A run that ends in a FAIL is still
  * written with --write: the point of publishing the check is that a dead
@@ -87,7 +87,7 @@ if (command === "check") code = await check(rest);
 else if (command === "archive") code = await archive(rest);
 else {
   console.error(
-    "Usage: cite-check check [--json] [--write] [--config <file>]\n       cite-check archive [--write] [--save] [--config <file>]"
+    "Usage: cite-checker check [--json] [--write] [--config <file>]\n       cite-checker archive [--write] [--save] [--config <file>]"
   );
   code = 2;
 }

@@ -39,7 +39,7 @@ fetch merely confirms it.
 
 **Read the source, not the link.** Fetch every cited URL and locate the sentence that
 carries the claim. Absence of that sentence is a finding even when the page loads. Run
-`cite-check check` first — it separates hosts that answered from hosts that refused, so you
+`cite-checker check` first — it separates hosts that answered from hosts that refused, so you
 do not mistake a bot-block for a passing check.
 
 **Test the artifact against its caption.** Open the image. Does it show what the caption
