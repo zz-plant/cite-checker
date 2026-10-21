@@ -2,7 +2,16 @@
   "name": "cite-check",
   "version": "0.1.0",
   "description": "Checks that the sources behind a site's claims still answer, with a three-state verdict (PASS / FAIL / UNKNOWN), identifier resolvers (DOI via Crossref, SEC archive paths), Wayback captures written back into frontmatter, and a committed snapshot the site can render.",
+  "author": "Kanav Jain (https://kanav.net)",
   "license": "MIT",
+  "homepage": "https://github.com/zz-plant/cite-check#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zz-plant/cite-check.git"
+  },
+  "bugs": {
+    "url": "https://github.com/zz-plant/cite-check/issues"
+  },
   "type": "module",
   "keywords": [
     "citations",
@@ -10,14 +19,16 @@
     "provenance",
     "wayback",
     "crossref",
-    "static-site"
+    "static-site",
+    "bun"
   ],
   "bin": {
     "cite-check": "./src/cli.ts"
   },
   "exports": {
     ".": "./src/index.ts",
-    "./snapshot": "./src/snapshot.ts"
+    "./snapshot": "./src/snapshot.ts",
+    "./package.json": "./package.json"
   },
   "files": [
     "src",
@@ -27,7 +38,8 @@
   ],
   "scripts": {
     "test": "bun test tests",
-    "typecheck": "tsc -p tsconfig.json --noEmit"
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "prepublishOnly": "bun test tests && bun run typecheck"
   },
   "dependencies": {
     "tinyglobby": "^0.2.14"
@@ -38,5 +50,8 @@
   },
   "engines": {
     "bun": ">=1.2"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

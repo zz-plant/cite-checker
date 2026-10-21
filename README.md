@@ -142,7 +142,7 @@ restore. The capture is inserted directly after the `href:` line of each entry:
 
 ```yaml
 evidenceSources:
-  - claim: "Dialer handled a million calls a day by 2023."
+  - claim: "The service handled a million requests a day by 2023."
     href: "https://example.com/press/2023-02-01"
     archived:
       href: "https://web.archive.org/web/20230205120000/https://example.com/press/2023-02-01"
